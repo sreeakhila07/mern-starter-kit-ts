@@ -11,14 +11,13 @@ const options = {
         },
         servers: [
             {
-                url: 'http://localhost:3000', // Your API base URL
+                url: '/', 
                 description: 'Development server',
             },
         ],
         components: {
             schemas: {
                 // Define your data models here (e.g., User, Product)
-                User: UserModel.schema.obj,
             },
         },
     },
