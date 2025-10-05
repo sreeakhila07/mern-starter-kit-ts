@@ -12,6 +12,32 @@ const userRouter = Router();
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     UserModel:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: The user ID
+ *         name:
+ *           type: string
+ *           description: The user's name
+ *         email:
+ *           type: string
+ *           description: The user's email
+ *         password:
+ *           type: string
+ *           description: The user's password
+ *       required:
+ *         - id
+ *         - name
+ *         - email
+ *         - password
+ */
+
+/**
+ * @swagger
  * /users:
  *   get:
  *     summary: Get all users
