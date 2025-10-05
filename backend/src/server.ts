@@ -2,6 +2,8 @@ import express, { Application, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import userRouter from './routes/users.route';
+import swaggerUi from 'swagger-ui-express';
+import specs from './swagger';
 
 dotenv.config();
 
@@ -15,9 +17,10 @@ app.use((req, _res, next) => {
 });
 
 app.use(express.json());
-app.use('/users', userRouter)
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/users', userRouter);
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response) => {
     res.send('Hello, World!');
 });
 
